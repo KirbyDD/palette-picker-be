@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const environment = process.env.NODE_ENV || 'development';
+const configuration = require('./knexfile')[environment];
+const database = require('knex')(configuration);
 
 app.use(cors());
 app.use(express.json())
@@ -13,19 +16,23 @@ app.get('/', (request, response) => {
 });
 
 app.get('/api/v1/projects', (request, response) => {
-  response.status(200).json('Initial Setup Complete for Projects');
+  database('projects').select('*')
+  .then(projects => response.status(200).json(projects))
 });
 
 app.get('/api/v1/projects/:id', (request, response) => {
-  response.status(200).json('Initial Setup Complete for Individual Project');
+  database('projects').where('id', request.params.id).select()
+  .then(project => response.status(200).json(project))
 });
 
 app.get('/api/v1/palettes', (request, response) => {
-  response.status(200).json('Initial Setup Complete for Palettes');
+  database('palettes').select('*')
+  .then(palettes => response.status(200).json(palettes))
 });
 
 app.get('/api/v1/palettes/:id', (request, response) => {
-  response.status(200).json('Initial Setup Complete for Individual Palette');
+  database('palettes').where('id', request.params.id).select()
+  .then(palette => response.status(200).json(palette))
 });
 
 /* POST REQUESTS */
