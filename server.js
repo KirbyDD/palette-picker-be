@@ -31,7 +31,7 @@ app.get('/api/v1/palettes', (request, response) => {
 });
 
 app.get('/api/v1/palettes/:id', (request, response) => {
-  database('palette').where('id', request.params.id).select()
+  database('palettes').where('id', request.params.id).select()
   .then(palette => response.status(200).json(palette))
 });
 
