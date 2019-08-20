@@ -20,7 +20,7 @@ app.get('/api/v1/projects/:id', (request, response) => {
   response.status(200).json('Initial Setup Complete for Individual Project');
 });
 
-app.get('/api/v1/palattes', (request, response) => {
+app.get('/api/v1/palettes', (request, response) => {
   response.status(200).json('Initial Setup Complete for Palettes');
 });
 
@@ -34,7 +34,7 @@ app.post('/api/v1/projects', (request, response) => {
   response.status(201).json('Initial Setup Complete for Adding Project');
 })
 
-app.post('/api/v1/projects', (request, response) => {
+app.post('/api/v1/palettes', (request, response) => {
   response.status(201).json('Initial Setup Complete for Adding Palette')
 })
 
@@ -44,7 +44,7 @@ app.patch('/api/v1/projects/:id', (request, response) => {
   response.status(202).json('Initial Setup Complete for Updating Project');
 })
 
-app.patch('/api/v1/projects/:id', (request, response) => {
+app.patch('/api/v1/palettes/:id', (request, response) => {
   response.status(202).json('Initial Setup Complete for Updating Palette')
 })
 
@@ -54,7 +54,7 @@ app.delete('/api/v1/projects/:id', (request, response) => {
   response.status(204).json('Initial Setup Complete for Updating Project');
 })
 
-app.delete('/api/v1/projects/:id', (request, response) => {
+app.delete('/api/v1/palettes/:id', (request, response) => {
   response.status(204).json('Initial Setup Complete for Updating Palette')
 })
 
