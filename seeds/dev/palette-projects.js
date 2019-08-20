@@ -1,45 +1,45 @@
 const projectData = require("../../data/projectData.json");
 const paletteData = require("../../data/paletteData.json");
 
-const createShows = (knex, show) => {
-  return knex("shows").insert(
+const createProjects = (knex, project) => {
+  return knex("projects").insert(
     {
-      title: show.title,
-      date: show.date,
-      tv_source: show.tv_source,
-      cover_image: show.cover_image
+      project_name: project.name
     },
     "id"
   )
 };
 
-const createCharacters = (knex, char) => {
-  return knex("characters").insert({
-    char_name: char.char_name,
-    ethnicity: char.ethnicity,
-    name: char.name
+const createPalettes = (knex, palette) => {
+  return knex("palettes").insert({
+    palette_name: palette.palette_name,
+    c1: palette.c1,
+    c2: palette.c2,
+    c3: palette.c3,
+    c4: palette.c4,
+    c5: palette.c5
   });
 };
 
 exports.seed = knex => {
-  return knex("shows")
+  return knex("projects")
     .del()
-    .then(() => knex("characters").del())
+    .then(() => knex("palettes").del())
     .then(() => {
-      const showsPromises = [];
-      projectData.forEach(show => {
-        console.log(show);
-        showsPromises.push(createShows(knex, show));
+      const projectsPromises = [];
+      projectData.forEach(project => {
+        console.log(project);
+        projectsPromises.push(createProjects(knex, project));
       });
-      return Promise.all(showsPromises);
+      return Promise.all(projectsPromises);
     })
     .catch(err => console.log(`Problem seeding data. ${err}`))
     .then(() => {
-      const charactersPromises = [];
-      paletteData.forEach(char => {
-        charactersPromises.push(createCharacters(knex, char));
+      const palettesPromises = [];
+      paletteData.forEach(palette => {
+        palettesPromises.push(createPalettes(knex, palette));
       });
-      return Promise.all(charactersPromises);
+      return Promise.all(palettesPromises);
     })
     .catch(err => console.log(`Problem seeding data. ${err}`));
 };
