@@ -31,7 +31,7 @@ app.get('/api/v1/palettes', (request, response) => {
   .then(palettes => response.status(200).json(palettes))
 });
 
-app.get('/api/v1/palettes/:id', (request, response) => {
+app.get('/api/v1/projects/:id/palettes', (request, response) => {
   database('palettes').where('id', request.params.id).select()
   .then(palette => response.status(200).json(palette))
 });
