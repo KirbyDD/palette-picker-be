@@ -40,21 +40,21 @@ app.post('/api/v1/projects', (request, response) => {
 
 /* PATCH REQUESTS */
 
-app.patch('/api/v1/projects', (request, response) => {
+app.patch('/api/v1/projects/:id', (request, response) => {
   response.status(202).json('Initial Setup Complete for Updating Project');
 })
 
-app.patch('/api/v1/projects', (request, response) => {
+app.patch('/api/v1/projects/:id', (request, response) => {
   response.status(202).json('Initial Setup Complete for Updating Palette')
 })
 
 /* DELETE REQUESTS */
 
-app.delete('/api/v1/projects', (request, response) => {
+app.delete('/api/v1/projects/:id', (request, response) => {
   response.status(204).json('Initial Setup Complete for Updating Project');
 })
 
-app.delete('/api/v1/projects', (request, response) => {
+app.delete('/api/v1/projects/:id', (request, response) => {
   response.status(204).json('Initial Setup Complete for Updating Palette')
 })
 
