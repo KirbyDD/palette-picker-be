@@ -1,0 +1,39 @@
+.welcome {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.routes {
+  background-color: lightblue;
+  border: 2px solid;
+  border-radius: 6px;
+  margin: 7px;
+  padding: 5px;
+  width: 45%
+}
+
+.path {
+  font-size: 20px;
+}
+
+.snippet {
+  background-color: white;
+  padding: 4px;
+  width: 165px;
+}
+
+.tab {
+  text-indent: 10px;
+}
+code {
+  text-align: left;
+}
