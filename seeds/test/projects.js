@@ -1,4 +1,4 @@
-const projectsData = require("../projects");
+const projectData = require("../../projects");
 
 const createProject = (knex, project) => {
   return knex("projects")
@@ -40,7 +40,7 @@ exports.seed = knex => {
     .then(() => {
       let projectsPromises = [];
 
-      projectsData.forEach(project => {
+      projectData.forEach(project => {
         projectsPromises.push(createProject(knex, project));
       });
 
