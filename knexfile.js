@@ -8,7 +8,7 @@ module.exports = {
     useNullAsDefault: true
   },
   seeds: {
-    directory: "./seeds/dev"
+    directory: "./seeds"
   },
   production: {
     client: "pg",
@@ -19,7 +19,7 @@ module.exports = {
     useNullAsDefault: true
   },
   seeds: {
-    directory: "./seeds/dev"
+    directory: "./seeds"
   },
   test: {
     client: "pg",
