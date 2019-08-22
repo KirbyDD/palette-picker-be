@@ -13,7 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "NODE_ENV=test jest --init",
+    "test": "NODE_ENV=test jest --exit",
     "start": "nodemon server.js"
   },
   "keywords": [],
