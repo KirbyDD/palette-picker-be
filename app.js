@@ -18,22 +18,60 @@ app.get('/', (request, response) => {
 
 app.get('/api/v1/projects', (request, response) => {
   database('projects').select('*')
-  .then(projects => response.status(200).json(projects))
+  .then(projects => {
+    if (projects.length) {
+      response.status(200).json(projects);
+    } else {
+      response.status(404).json("No projects found for this project");
+    }
+  })
+  .catch(error => {
+    response.status(500).json({ error });
+  });
 });
 
 app.get('/api/v1/projects/:id', (request, response) => {
   database('projects').where('id', request.params.id).select()
-  .then(project => response.status(200).json(project))
+  .then(projects => {
+    if (projects.length) {
+      response.status(200).json(projects);
+    } else {
+      response.status(404).json("No project found");
+    }
+  })
+  .catch(error => {
+    response.status(500).json({ error });
+  });
 });
 
 app.get('/api/v1/palettes', (request, response) => {
   database('palettes').select('*')
-  .then(palettes => response.status(200).json(palettes))
+  .then(palettes => {
+    if (palettes.length) {
+      response.status(200).json(palettes);
+    } else {
+      response.status(404).json("No palettes found");
+    }
+  })
+  .catch(error => {
+    response.status(500).json({ error });
+  });
 });
 
 app.get('/api/v1/projects/:id/palettes', (request, response) => {
-  database('palettes').where('id', request.params.id).select()
-  .then(palette => response.status(200).json(palette))
+  database("projects")
+    .where("id", request.params.id)
+    .select()
+    .then(palettes => {
+      if (palettes.length) {
+        response.status(200).json(palettes);
+      } else {
+        response.status(404).json("No palettes found for this project");
+      }
+    })
+    .catch(error => {
+      response.status(500).json({ error });
+    });
 });
 
 /* POST REQUESTS */
