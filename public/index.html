@@ -9,5 +9,60 @@
       <h1>Welcome to our Palette Picker API</h1>
       <h2>Created by De'Marcus Kirby & Kayla Larson</h2>
     </header>
+    <h2>GET REQUESTS</h2>
+    <section>
+      <article class='routes'>
+        <h3>Get All Projects</h3>
+        <p class='path'><i>Path: </i>/api/v1/projects</p>
+      </article>
+      <article class='routes'>
+        <h3>Get All Palettes</h3>
+        <p class='path'><i>Path: </i>/api/v1/palettes</p>
+      </article>
+      <article class='routes'>
+        <h3>Get An Individual Project</h3>
+        <h4>Requirement: ID of Project</h4>
+        <p class='path'><i>Path: </i>/api/v1/projects/<strong>id</strong></p>
+      </article>
+      <article class='routes'>
+        <h3>Get Palettes for Individual Project</h3>
+        <h4>Requirement: ID of Project</h4>
+        <p class='path'><i>Path: </i>/api/v1/projects/<strong>id</strong>/palettes</p>
+      </article>
+    </section>
+    <h2>POST REQUESTS</h2>
+    <section>
+        <article class='routes'>
+            <h3>Post New Project</h3>
+            <h4>Requirement: Object w/ Key of name for Project</h4>
+            <div class='snippet'>
+              <code>
+                <p>{</p>
+                 <p class='tab'>"name": &lt;String&gt;</p>
+                <p>}</p>
+            </code>
+            </div>
+            <p class='path'><i>Path: </i>/api/v1/projects</p>
+          </article>
+          <article class='routes'>
+              <h3>Post New Palette</h3>
+              <h4>Requirement: Object w/ Key of name, array of hex codes and id for assosiated project</h4>
+              <div class='snippet'>
+                <code>
+                  <p>{</p>
+                   <p class='tab'>"name": &lt;String&gt;,</p>
+                   <p class='tab'>"colors": &lt;Array&gt;,</p>
+                   <p class='tab'>"id": &lt;Number&gt;,</p>
+                  <p>}</p>
+              </code>
+              </div>
+              <p class='path'><i>Path: </i>/api/v1/projects</p>
+            </article>
+          <!-- <article class='routes'>
+            <h3>Get All Palettes</h3>
+            <h4>Requirement: Object w/ Keys of name, for Project</h4>
+            <p class='path'><i>Path: </i>/api/v1/palettes</p>
+          </article> -->
+    </section>
   </body>
 </html>
