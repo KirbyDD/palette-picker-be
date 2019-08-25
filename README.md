@@ -9,6 +9,7 @@ Palette Picker was a two week long paired project. On the backend side, we creat
 - Express
 - Knex
 - PostgreSQL
+- Travis CI
 
 ## Learning Objectives
 
