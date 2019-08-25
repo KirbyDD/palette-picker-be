@@ -1,9 +1,8 @@
-[Heroku Deployed Database](https://palette-picker-dk.herokuapp.com/)
 By: [DeMarcus Kirby](https://github.com/KirbyDD) and [Kayla Larson](https://github.com/kaylalarson1990)
 
 # Description
 
-Palette Picker was a two week long paired project. On the backend side, we created our own data set using a one-to-many relationship. We have our "one" being the projects and our "many" being the palettes saved to each project. Learning goals were to create a RESTful api using NodeJS Express, PostgreSQL, and Knex.
+Palette Picker was a two week long paired project. On the backend side, we created our own data set using a one-to-many relationship. We have our "one" being the projects and our "many" being the palettes saved to each project. Learning goals were to create a RESTful api using NodeJS Express, PostgreSQL, and Knex. [Heroku Deployed Database](https://palette-picker-dk.herokuapp.com/)
 
 ## Technologies
 
