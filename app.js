@@ -101,7 +101,7 @@ app.post("/api/v1/projects", async (request, response) => {
 });
 
 app.post("/api/v1/palettes", (request, response) => {
-  let newPalette = request.body.palette;
+  let newPalette = request.body;
   for (let requiredParameter of [
     "palette_name",
     "c1",
