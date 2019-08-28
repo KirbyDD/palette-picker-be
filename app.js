@@ -83,10 +83,10 @@ app.get("/api/v1/projects/:id/palettes", (request, response) => {
 
 app.post("/api/v1/projects", async (request, response) => {
   let newProj = request.body;
-  for (let requiredParameter of ["project_name", "palettes"]) {
+  for (let requiredParameter of ["project_name"]) {
     if (!newProj[requiredParameter]) {
       return response.status(422).send({
-        error: `Expected format: { project_name: <String>, palettes: <String>. You're missing a "${requiredParameter}" property.`
+        error: `Expected format: { project_name: <String>. You're missing a "${requiredParameter}" property.`
       });
     }
   }
