@@ -1,4 +1,4 @@
-const projectData = require('../projects');
+const projectData = require("../projects");
 
 const createProject = (knex, project) => {
   return knex("projects")
