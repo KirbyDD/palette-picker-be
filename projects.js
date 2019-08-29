@@ -44,6 +44,21 @@ let projectData = [
         c5: "#808000"
       }
     ]
+  },
+
+  {
+    project_name: "Project 3",
+    palettes: [
+      {
+        palette_name: "Test palette one",
+        proj_name: "Project 3",
+        c1: "#454545",
+        c2: "#999999",
+        c3: "#000000",
+        c4: "#ffffff",
+        c5: "#808000"
+      }
+    ]
   }
 ];
 
